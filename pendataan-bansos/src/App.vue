@@ -3,7 +3,7 @@
     <header
       class="flex justify-between sticky top-0 bg-gray-200 px-10 py-4 md:px-16 lg:px-24"
     >
-      <div class="w-28">
+      <div class="w-24">
         <img src="./assets/logo_jds.png" alt="logo JDS" />
       </div>
       <div class="flex gap-8 items-center">
