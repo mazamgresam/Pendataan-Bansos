@@ -3,69 +3,97 @@
     <div>
       <h1 class="font-bold text-2xl p-4">Formulir Input Data</h1>
     </div>
-    <form class="flex flex-col px-6" action="">
-
+    
+    <Form class="flex flex-col px-6" @submit="onSubmit">
       <label class="text-sm font-medium" for="nama">Nama Lengkap</label>
-      <input placeholder="Nama Sesuai KTP" class="rounded-lg mb-4 p-2" type="text" name="nama" id="nama">
+      <Field placeholder="Nama Sesuai KTP" class="rounded-lg mb-4 p-2" type="text" name="Nama" id="nama" />
 
       <label class="text-sm font-medium" for="nik">NIK</label>
-      <input placeholder="Masukan NIK" class="rounded-lg mb-4 p-2" type="text" name="nik" id="nik">
+      <Field placeholder="Masukan NIK" class="rounded-lg mb-4 p-2" type="text" name="NIK" id="nik" />
 
-      <label class="text-sm font-medium" for="kk">No Kartu Keluarga</label>
-      <input placeholder="Masukan no Kartu Keluarga" class="rounded-lg mb-4 p-2" type="text" name="kk" id="kk">
+      <label class="text-sm font-medium" for="kartuKeluarga">No Kartu Keluarga</label>
+      <Field placeholder="Masukan no Kartu Keluarga" class="rounded-lg mb-4 p-2" type="text" name="KartuKeluarga" id="kartuKeluarga" />
 
       <label class="text-sm font-medium" for="umur">Umur</label>
-      <input placeholder="Masukan Umur Anda" class="rounded-lg mb-4 p-2" type="text" name="umur" id="umur">
+      <Field placeholder="Masukan Umur Anda" class="rounded-lg mb-4 p-2" type="text" name="Umur" id="umur" />
 
       <label class="text-sm font-medium">Jenis Kelamin</label>
       <section class="flex gap-4 mb-4 p-2">
-        <p><input type="radio" name="jenisKelamin" id="jenisKelamin" value="Laki-Laki"> Laki-laki</p>
-        <p><input type="radio" name="jenisKelamin" id="jenisKelamin" value="Perempuan"> Perempuan</p>
+        <p><Field type="radio" name="JenisKelamin" id="jenisKelamin" value="Laki-Laki" /> Laki-laki</p>
+        <p><Field type="radio" name="JenisKelamin" id="jenisKelamin" value="Perempuan" /> Perempuan</p>
       </section>
 
       <label class="text-sm font-medium" for="alamat">Alamat</label>
-      <textarea placeholder="Masukan Alamat Anda" class="rounded-lg mb-4 p-2" type="text" name="alamat" id="alamat"></textarea>
+      <Field placeholder="Masukan Alamat Anda" class="rounded-lg mb-4 p-2" name="Alamat" id="alamat" as="textarea">
+      </Field>
+
 
       <section class="flex gap-4 sm:justify-between">
         <div class="w-full">
           <label class="text-sm font-medium" for="rt">RT</label>
-          <input placeholder="Masukan RT" class="rounded-lg mb-4 p-2 w-[100%]" type="text" name="rt" id="rt">
+          <Field placeholder="Masukan RT" class="rounded-lg mb-4 p-2 w-[100%]" type="text" name="RT" id="rt" />
         </div>
         <div class= "w-full">
           <label class="text-sm font-medium" for="rw">RW</label>
-          <input placeholder="Masukan RW" class="rounded-lg mb-4 p-2 w-[100%]" type="text" name="rw" id="rw">
+          <Field placeholder="Masukan RW" class="rounded-lg mb-4 p-2 w-[100%]" type="text" name="RW" id="rw" />
         </div>
       </section>
 
       <label class="text-sm font-medium" for="hasil1">Penghasilan Sebelum Pandemi</label>
-      <input placeholder="Masukan Penghasilan Anda Sebelum Pandemi" class="rounded-lg mb-4 p-2" type="text" name="hasil1" id="hasil1">
+      <Field placeholder="Masukan Penghasilan Anda Sebelum Pandemi" class="rounded-lg mb-4 p-2" type="text" name="HasilSebelum" id="hasil1" />
 
       <label class="text-sm font-medium" for="hasil">Penghasilan Setelah Pandemi</label>
-      <input placeholder="Masukan Penghasilan Anda Setelah Pandemi" class="rounded-lg mb-4 p-2" type="text" name="hasil2" id="hasil2">
+      <Field placeholder="Masukan Penghasilan Anda Setelah Pandemi" class="rounded-lg mb-4 p-2" type="text" name="HasilSetelah" id="hasil2" />
 
       <label class="text-sm font-medium">Alasan Membutuhkan Bantuan</label>
-      <select class="text-sm p-2 rounded-lg mb-4"> Pilih
-        <option disabled selected="selected">Pilih Salah Satu</option>
-        <option>Kehilangan pekerjaan</option>
-        <option>Kepala keluarga terdampak atau korban Covid</option>
-        <option>Tergolong fakir/miskin semenjak sebelum Covid</option>
-      </select>
+      <Field name="Alasan" class="text-sm p-2 rounded-lg mb-4" as="select">
+        <option value="" disabled selected>Pilih Salah Satu</option>
+        <option value="Kehilangan pekerjaan">Kehilangan pekerjaan</option>
+        <option value="Kepala keluarga terdampak atau korban Covid">Kepala keluarga terdampak atau korban Covid</option>
+        <option value="Tergolong fakir/miskin semenjak sebelum Covid">Tergolong fakir/miskin semenjak sebelum Covid</option>
+      </Field>
 
       <section class="flex flex-col">
         <div>
           <label class="flex flex-col text-sm font-medium" for="ktp">Foto Kartu Tanda Penduduk</label>
-          <input class="mb-4" type="file" name="ktp" id="ktp">
+          <Field class="mb-4" type="file" name="FotoKTP" id="ktp" />
         </div>
         <div>
           <label class="flex flex-col text-sm font-medium" for="fkk">Foto Kartu Keluarga</label>
-          <input class="mb-4" type="file" name="fkk" id="fkk">
+          <Field class="mb-4" type="file" name="FotoKK" id="fkk" />
         </div>
       </section>
-    </form>
+
+      <button class="bg-gradient-to-r from-green-300 to-yellow-200 font-bold text-2xl rounded-lg px-4 py-2 text-blue-500 opacity-80 hover:opacity-100 border-2 hover:border-blue-500">Submit</button>
+    </Form>
   </div>
 </template>
 <script>
-export default {};
+import { Form, Field, ErrorMessage } from 'vee-validate';
+
+export default {
+    components: {
+    Form,
+    Field,
+    ErrorMessage,
+  },
+  data() {
+    return {
+      dataBansos: null
+    }
+  },
+  methods: {
+    onSubmit(value) {
+      this.dataBansos = value
+      console.log(this.dataBansos.Nama)
+
+      this.dataBansos.Nama = ''
+      console.log(this.dataBansos.Nama)
+
+
+    }
+  },
+};
 </script>
 <style scoped>
 
