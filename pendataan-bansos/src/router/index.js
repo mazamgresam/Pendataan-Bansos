@@ -12,6 +12,11 @@ const routes = [
     name: "Form",
     component: () => import("../views/Form.vue"),
   },
+  {
+    path: "/success",
+    name: "Success",
+    component: () => import("../views/Success.vue"),
+  }
 ];
 
 const router = createRouter({
