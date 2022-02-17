@@ -62,9 +62,10 @@
         <option value="Tergolong fakir/miskin semenjak sebelum Covid">Tergolong fakir/miskin semenjak sebelum Covid</option>
         <option value="Lainnya">Lainnya</option>
       </Field>
+      <ErrorMessage class="mb-4 px-2 mt-[-1rem] text-xs font-semibold text-red-600" name="Alasan" />
 
-      <Field :rules="validateAlasan" placeholder="Masukan Alasan Membutuhkan Bantuan" type="text" name="AlasanLain" v-show="other" class="rounded-lg mb-4 p-2" />
-      <ErrorMessage class="mb-4 px-2 mt-[-1rem] text-xs font-semibold text-red-600" name="AlasanLain" />
+      <Field :rules="validateAlasan" placeholder="Masukan Alasan Membutuhkan Bantuan" type="text" name="AlasanLain" v-if="other" class="rounded-lg mb-4 p-2" />
+      <ErrorMessage v-if="other" class="mb-4 px-2 mt-[-1rem] text-xs font-semibold text-red-600" name="AlasanLain" />
 
       <section class="flex flex-col mt-2">
         <div>
@@ -103,16 +104,15 @@ export default {
   },
   data() {
     return {
-      alasan: null,
+      alasan: '',
       other: false,
     }
   },
   methods: {
     onSubmit(value) {
-      console.log(value)
       const wait = Math.floor(Math.random() * 10)
 
-      if (wait >= 5) {
+      if (wait >= 7) {
         NProgress.start()
         setTimeout(() => {
           NProgress.done()
@@ -130,6 +130,7 @@ export default {
             name: 'Success'
           })
           NProgress.done()
+          console.log(value)
         }, 1500);
       }
     },
