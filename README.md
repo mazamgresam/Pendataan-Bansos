@@ -1,5 +1,6 @@
 # Pendataan-Bansos
-Project Challenge dari Mitra JCC membuat form pendataan bantuan sosial untuk masyarakat
-Saya Membuatnya Ulang dengan menggunakan Vue 3
+Membuat Ulang Project Challenge dari Mitra JCC membuat form pendataan bantuan sosial untuk masyarakat
 
-<a href="https://azam-pendataan-bansos.netlify.app/">Link</a>
+Web Aplikasi ini saya buat ulang menggunakan Vue 3 Vite + Tailwind CSS
+
+<a href="https://azam-pendataan-bansos.netlify.app/">Demo</a>
